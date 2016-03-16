@@ -1,0 +1,72 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'child_process',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 warn package.json util@0.10.3 util is also the name of a node core module.
+5 verbose cache add [ 'child_process', null ]
+6 verbose cache add name=undefined spec="child_process" args=["child_process",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'child_process',
+7 verbose parsed url   path: 'child_process',
+7 verbose parsed url   href: 'child_process' }
+8 silly lockFile 4845fa97-child-process child_process
+9 verbose lock child_process C:\Users\x118939\AppData\Roaming\npm-cache\4845fa97-child-process.lock
+10 silly lockFile 4845fa97-child-process child_process
+11 silly lockFile 4845fa97-child-process child_process
+12 verbose addNamed [ 'child_process', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile 512a7ef6-child-process child_process@
+15 verbose lock child_process@ C:\Users\x118939\AppData\Roaming\npm-cache\512a7ef6-child-process.lock
+16 silly addNameRange { name: 'child_process', range: '*', hasData: false }
+17 verbose request where is /child_process
+18 verbose request registry http://registry.npmjs.org/
+19 verbose request id f21b341845af6e1d
+20 verbose url raw /child_process
+21 verbose url resolving [ 'http://registry.npmjs.org/', './child_process' ]
+22 verbose url resolved http://registry.npmjs.org/child_process
+23 verbose request where is http://registry.npmjs.org/child_process
+24 info trying registry request attempt 1 at 00:46:35
+25 http GET http://registry.npmjs.org/child_process
+26 http 404 http://registry.npmjs.org/child_process
+27 silly registry.get cb [ 404,
+27 silly registry.get   { 'cache-control': 'max-age=0',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     date: 'Tue, 15 Mar 2016 07:46:36 GMT',
+27 silly registry.get     'x-served-by': 'cache-sjc3131-SJC',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1458027996.607004,VS0,VE87',
+27 silly registry.get     'content-length': '2',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     age: '1',
+27 silly registry.get     via: '1.1 varnish, 1.1 detour.nssi.telus.com:3128 (Cisco-WSA/8.0.6-119)',
+27 silly registry.get     connection: 'keep-alive',
+27 silly registry.get     'proxy-connection': 'keep-alive' } ]
+28 silly lockFile 512a7ef6-child-process child_process@
+29 silly lockFile 512a7ef6-child-process child_process@
+30 error 404 Not Found
+30 error 404
+30 error 404 'child_process' is not in the npm registry.
+30 error 404 You should bug the author to publish it
+30 error 404
+30 error 404 Note that you can also install from a
+30 error 404 tarball, folder, or http url, or git url.
+31 error System Windows_NT 6.1.7601
+32 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "child_process" "--save"
+33 error cwd c:\Users\x118939\github\bor
+34 error node -v v0.10.35
+35 error npm -v 1.4.28
+36 error code E404
+37 verbose exit [ 1, true ]
