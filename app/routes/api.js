@@ -1,11 +1,9 @@
 var config = require('../../config'),
     Errors = require('node-common-errors'),
-    util    = require('util'),
-    spawn   = require('child_process').spawn,
-    carrier = require('carrier'),
     Errors = require('common-errors'),
     dateFormat = require('dateformat'),
-    logger = require('../modules/bunyan-logger');
+    logger = require('../modules/bunyan-logger'),
+    exec = require('child_process').exec;
 
 function logDebug(req, msg) {
     logger.debug({ 'session-id': req.session.id}, msg);
@@ -98,20 +96,25 @@ module.exports = function(app, express) {
         
         logInfo(req,"command='"+cmd+"'");
         
-        /*var exec = require('child_process').exec;
         exec("perl " + cmd, function(err, stdout, stderr) {
             if (err) {
                 logError(req,err);
             }
             logInfo(req,"stdout='"+stdout+"'");
-        });*/
+        });
         
-        var pl_proc = spawn('perl', [cmd]);
-        var my_carrier = carrier.carry(pl_proc.stdout);
+        /*
+        var util    = require('util'),
+            spawn   = require('child_process').spawn,
+            carrier = require('carrier'),
+            pl_proc = spawn('perl', [cmd]),
+            my_carrier;
+            
+        my_carrier = carrier.carry(pl_proc.stdout);
 
         my_carrier.on('line', function(line) {
             logInfo(req,"line='"+line+"'");
-        });
+        });*/
         
         res.send('ok');
         
