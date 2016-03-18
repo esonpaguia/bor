@@ -93,17 +93,25 @@ module.exports = function(app, express) {
 	                            " -t " + enddatetime + 
 	                            " " + prompt + 
 	                            " --email " + email + 
-	                            " --commit";
+	                            " --commit &";
 	
         
         logInfo(req,"command='"+cmd+"'");
         
-        var pl_proc = spawn('perl', [cmd]);
+        var exec = require('child_process').exec;
+        exec("perl " + cmd, function(err, stdout, stderr) {
+            if (err) {
+                logError(req,err);
+            }
+            logInfo(req,"stdout='"+stdout+"'");
+        });
+        
+        /*var pl_proc = spawn('perl', [cmd]);
         var my_carrier = carrier.carry(pl_proc.stdout);
 
         my_carrier.on('line', function(line) {
-          logInfo(req,"line='"+line+"'");
-        });
+            logInfo(req,"line='"+line+"'");
+        });*/
         
         res.send('ok');
         
