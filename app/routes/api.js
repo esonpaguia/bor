@@ -98,7 +98,11 @@ module.exports = function(app, express) {
         
         logInfo(req,"command='"+cmd+"'");
         
-        system(cmd);
+        var exec = require('child_process').exec;
+        exec("perl " + cmd, function(err, stdout, stderr) {
+            res.send('done');
+            return;
+        });
         
         /*var pl_proc = spawn('perl', [cmd]);
         var my_carrier = carrier.carry(pl_proc.stdout);
@@ -106,8 +110,6 @@ module.exports = function(app, express) {
         my_carrier.on('line', function(line) {
           console.log('line: ' + line);
         });*/
-        
-        res.send('ok');
         
     })
     
