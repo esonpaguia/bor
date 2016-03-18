@@ -11,7 +11,7 @@ var logger = bunyan.createLogger({
         },
         {
             path: './logs/bunyan.log',
-            level: 'trace'
+            level: 'info'
         }                      
     ]
 });
