@@ -93,23 +93,19 @@ module.exports = function(app, express) {
 	                            " -t " + enddatetime + 
 	                            " " + prompt + 
 	                            " --email " + email + 
-	                            " --commit &";
+	                            " --commit";
 	
         
         logInfo(req,"command='"+cmd+"'");
         
-        var exec = require('child_process').exec;
-        exec("perl " + cmd, function(err, stdout, stderr) {
-            res.send('done');
-            return;
-        });
-        
-        /*var pl_proc = spawn('perl', [cmd]);
+        var pl_proc = spawn('perl', [cmd]);
         var my_carrier = carrier.carry(pl_proc.stdout);
 
         my_carrier.on('line', function(line) {
-          console.log('line: ' + line);
-        });*/
+          logInfo(req,"line='"+line+"'");
+        });
+        
+        res.send('ok');
         
     })
     
