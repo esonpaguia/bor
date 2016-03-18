@@ -93,17 +93,19 @@ module.exports = function(app, express) {
 	                            " -t " + enddatetime + 
 	                            " " + prompt + 
 	                            " --email " + email + 
-	                            " --commit";
+	                            " --commit &";
 	
         
         logInfo(req,"command='"+cmd+"'");
         
-        var pl_proc = spawn('perl', [cmd]);
+        system(cmd);
+        
+        /*var pl_proc = spawn('perl', [cmd]);
         var my_carrier = carrier.carry(pl_proc.stdout);
 
         my_carrier.on('line', function(line) {
           console.log('line: ' + line);
-        });
+        });*/
         
         res.send('ok');
         
